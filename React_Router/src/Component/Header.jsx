@@ -1,30 +1,68 @@
-import React from 'react'
-import Aheader from '../Components/Aheader'
-import { Helmet } from 'react-helmet'
 
-function Adashboard() {
+import React from 'react'
+import { Link } from "react-router-dom";
+function Header() {
   return (
     <>
-    <Helmet>
-        
-  <link href="Admin/assets/img/favicon.png" rel="icon" />
-  <link href="Admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <link href="https://fonts.gstatic.com" rel="preconnect" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
-  
-  <link href="Admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="Admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="Admin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-  <link href="Admin/assets/vendor/quill/quill.snow.css" rel="stylesheet" />
-  <link href="Admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
-  <link href="Admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
-  <link href="Admin/assets/vendor/simple-datatables/style.css" rel="stylesheet" />
-  <link href="Admin/assets/css/style.css" rel="stylesheet" />
-    </Helmet>
-       <Aheader/>
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+      {/* Container for the navbar */}
+      <div className="container-fluid">
+        {/* Navbar Brand */}
+        <a className="navbar-brand text-info" href="#">
+          Lazyloading
+        </a>
+        {/* Navbar Toggler for small screens */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
+        {/* Navbar Content */}
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          {/* Navbar Links */}
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            {/* Home Link */}
+            <li className="nav-item">
+              <Link className="nav-link text-info" aria-current="page" to="/">
+                Home
+              </Link>
+            </li>
+            {/* Product Link */}
+            <li className="nav-item">
+              <Link className="nav-link text-info" to="/product">
+                Product
+              </Link>
+            </li>
+         
+          
+          </ul>
+          {/* Search Form */}
+          <form className="d-flex">
+            {/* Search Input */}
+            <input
+              className="form-control me-2 text-info"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            {/* Search Button */}
+            <button className="btn btn-outline-success text-info" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+      
     </>
   )
 }
 
-export default Adashboard
+export default Header
